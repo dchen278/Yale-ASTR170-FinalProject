@@ -11,6 +11,10 @@ This repository contains the source code for the final project of ASTR 170, Fall
 ## Running the Web Application
 To run the web application, you will need to run the following command in the root directory of the project:
 ```bash
+yarn install # or npm install
+```
+Then, run the following command:
+```bash
 yarn dev
 ```
 You can then access the web application by navigating to `http://localhost:3000` in your web browser.
