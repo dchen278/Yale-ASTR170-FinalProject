@@ -7,6 +7,30 @@ This repository contains the source code for the final project of ASTR 170, Fall
 - Jonathan Fan (jonathan.fan@yale.edu)
 - Bryant Li (bryant.li@yale.edu)
 
+## Installation
+## Running the Web Application
+To run the web application, you will need to run the following command in the root directory of the project:
+```bash
+yarn dev
+```
+You can then access the web application by navigating to `http://localhost:3000` in your web browser.
+
+## Running the Model
+To run the model, you will need to run the following command in the root directory of the project:
+
+```bash
+pip install -r requirements.txt
+```
+
+Get the dataset from [Kaggle](https://www.kaggle.com/datasets/saurabhshahane/galaxy-classification) and place it in the `data` directory.
+
+Then, run the following command:
+
+```bash
+python create_dataset.py
+```
+
+
 ## Topic
 Our project aims to classify images of galaxies via convolutional neural networks (CNN) by identifying specific visual features and similarities to galaxies of the same type.
 ## Format
