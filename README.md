@@ -22,7 +22,7 @@ To run the model, you will need to run the following command in the root directo
 pip install -r requirements.txt
 ```
 
-Get the dataset from [Kaggle](https://www.kaggle.com/datasets/saurabhshahane/galaxy-classification) and place it in the `data` directory.
+Get the dataset from [Kaggle](https://www.kaggle.com/datasets/saurabhshahane/galaxy-classification) and place it in the `model` directory.
 
 Then, run the following command:
 
