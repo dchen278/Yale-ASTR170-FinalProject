@@ -52,5 +52,4 @@ We will train a CNN model to classify whether an uploaded galaxy image is an ell
 - Tailwind CSS
 
 ## References
-https://www.kaggle.com/datasets/saurabhshahane/galaxy-classification
-https://doi.org/10.1016/0083-6656(94)90037-X
+https://astronn.readthedocs.io/en/latest/index.html
