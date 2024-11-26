@@ -1,6 +1,34 @@
 tensorflow==2.10
+ipywidgets==8.0.1
+jupyterlab==3.4.5
+jupyterlab-widgets==3.0.2
+ray
+tqdm
+numba
+numpy
+flask
+pyyaml
+openai
+pandas
+astroNN
+pyarrow
+xgboost
+tiktoken
+catboost
+tabulate
+lightgbm
+matplotlib
+fastparquet
+progressbar
+statsmodels
 scikit-learn
 scikit-image
-flask
 
+# Note: You must use tensorflow==2.10 to use GPU and run the below command
 # conda install -c conda-forge cudatoolkit=11.2 cudnn=8.1.0
+
+# Note: astroNN will throw an error if you use tensorflow==2.10, but my code handles this
+
+# Note: To use pytorch run this command for GPU setup
+# conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+
