@@ -8,6 +8,7 @@ This repository contains the source code for the final project of ASTR 170, Fall
 - Bryant Li (bryant.li@yale.edu)
 
 ## Installation
+
 ## Running the Web Application
 To run the web application, you will need to run the following command in the root directory of the project:
 ```bash
@@ -34,6 +35,11 @@ Then, run the following command:
 python create_dataset.py
 ```
 
+To run the server, run the following command:
+
+```bash
+python classify.py
+```
 
 ## Topic
 Our project aims to classify images of galaxies via convolutional neural networks (CNN) by identifying specific visual features and similarities to galaxies of the same type.
