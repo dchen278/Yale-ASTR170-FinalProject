@@ -26,24 +26,27 @@ export async function POST(req: NextRequest) {
       body: formData,
     });
 
-    // if (!response.ok) {
-    //   throw new Error('Failed to classify image');
-    // }
 
     const data = await response.json();
+    console.log(data)
 
-    // Add explanations for each galaxy type
     const explanations: Record<string, string> = {
-      'elliptical': 'Elliptical galaxies are smooth, featureless systems of stars that appear as ellipses in the sky. They contain mostly older stars and little gas or dust.',
-      'spiral': 'Spiral galaxies have a central bulge surrounded by a disk of stars, gas and dust in a spiral structure. They are often sites of active star formation.',
-      'barred spiral': 'Barred spiral galaxies are spiral galaxies with a bar-shaped structure of stars through their center. The spiral arms often start at the ends of the bar.',
-      'lenticular': 'Lenticular galaxies are intermediate between elliptical and spiral galaxies. They have a disk and bulge like spiral galaxies but lack spiral arms.',
+      'Class 0': 'These galaxies are disk-shaped and viewed face-on, with no visible spiral structure. They likely originated from gas clouds that collapsed into a rotating disk but lacked the density or instability needed to form spiral arms.',
+      'Class 1': 'Smooth, completely round galaxies are usually elliptical galaxies formed through the collision and merger of smaller galaxies. This process destroys most of the original structures, leaving a uniform appearance.',
+      'Class 2': 'Smooth galaxies with an intermediate shape between completely round and elliptical. These may represent transitional phases in galaxy evolution or galaxies influenced by weaker gravitational interactions.',
+      'Class 3': 'Smooth, cigar-shaped galaxies are typically elongated elliptical galaxies. Their shape may result from rotation or the tidal forces of nearby galaxies during close encounters.',
+      'Class 4': 'Disk-shaped galaxies viewed edge-on, with a rounded central bulge. These galaxies likely formed from rotating gas clouds where the bulge developed early due to rapid star formation at the center.',
+      'Class 5': 'Disk-shaped galaxies viewed edge-on, featuring a boxy or rectangular bulge. This morphology may arise from the gravitational influence of a central bar or the accretion of smaller companion galaxies.',
+      'Class 6': 'Disk-shaped galaxies viewed edge-on, with no noticeable central bulge. These galaxies are often younger or less evolved, with star formation more evenly distributed across the disk.',
+      'Class 7': 'Disk-shaped galaxies viewed face-on, with tightly wound spiral arms. The tight spirals suggest a high density of stars and gas, with strong central gravitational forces shaping the arms.',
+      'Class 8': 'Disk-shaped galaxies viewed face-on, with moderately wound spiral arms. These galaxies often have an intermediate level of star formation and gravitational cohesion compared to tighter spirals.',
+      'Class 9': 'Disk-shaped galaxies viewed face-on, with loosely wound spiral arms. These galaxies are often less dense, with lower star formation rates and weaker gravitational forces shaping the arms.',
     };
-
+        
     return NextResponse.json({
       classification: data.classification,
       confidence: data.confidence,
-      explanation: explanations[data.classification.toLowerCase()] || 'A fascinating galaxy type!',
+      explanation: explanations[data.class] || 'A fascinating galaxy type!',
     });
   } catch (error) {
     console.error('Error classifying image:', error);

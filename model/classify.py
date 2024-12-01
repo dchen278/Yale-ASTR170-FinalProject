@@ -60,11 +60,12 @@ def classify():
     confidence = float(np.max(predicted_labels))
 
     # Lookup classification
-    classification = galaxy10cls_lookup(prediction_class)
+    classification = galaxy10cls_lookup(prediction_class[0])
 
     return jsonify({
         'classification': f"{classification}",
         'confidence': confidence,
+        'class': f"Class {prediction_class[0]}"
     })
 
 # ********************************************************RUN APP********************************************************

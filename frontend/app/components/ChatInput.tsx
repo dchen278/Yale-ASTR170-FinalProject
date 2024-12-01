@@ -46,7 +46,7 @@ export const ChatInput = ({ onSend, disabled }: ChatInputProps) => {
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Type a message... (Press Enter to send, Shift+Enter for new line)"
+          placeholder="Type a message... (Press Enter to send, Shift+Enter for new line). Or type 'help' for assistance."
           disabled={disabled}
           className="flex-1 resize-none rounded-lg border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-blue-500 min-h-[44px] max-h-[200px] overflow-y-auto"
           rows={1}
