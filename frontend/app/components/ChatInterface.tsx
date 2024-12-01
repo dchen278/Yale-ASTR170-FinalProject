@@ -43,25 +43,14 @@ export const ChatInterface = () => {
     ]);
 
     try {
-      // Convert file to base64
-      const base64String = await new Promise<string>((resolve) => {
-        const reader = new FileReader();
-        reader.onloadend = () => {
-          const base64 = reader.result as string;
-          resolve(base64);
-        };
-        reader.readAsDataURL(file);
-      });
+      // Create FormData to send the image file
+      const formData = new FormData();
+      formData.append('image', file); // Append the file directly
 
       // Send to backend
       const response = await fetch('/api/classify', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          image: base64String,
-        }),
+        body: formData, // Use FormData directly
       });
 
       if (!response.ok) {

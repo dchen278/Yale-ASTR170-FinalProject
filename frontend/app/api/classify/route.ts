@@ -16,22 +16,19 @@ export async function POST(req: NextRequest) {
     // Convert the file to base64 for sending to Flask API
     const bytes = await image.arrayBuffer();
     const buffer = Buffer.from(bytes);
-    const base64Image = buffer.toString('base64');
+    // const base64Image = buffer.toString('base64');
 
     // Send to Flask backend
-    const response = await fetch('http://localhost:5000/classify', {
+    formData.append('image', image);
+
+    const response = await fetch('http://127.0.0.1:5000/classify', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        image: base64Image,
-      }),
+      body: formData,
     });
 
-    if (!response.ok) {
-      throw new Error('Failed to classify image');
-    }
+    // if (!response.ok) {
+    //   throw new Error('Failed to classify image');
+    // }
 
     const data = await response.json();
 
